@@ -1,0 +1,732 @@
+/*CSS Root variables */
+:root {
+    --cardBackgroundColor: white;
+    --fontColor: white;
+    --linkedInHoverColor: blue;
+    --githubHoverColor: black;
+    --mailHoverColor: orangered;
+    --instagramHoverColor: rgb(223, 16, 113);
+    --runsTrackerHoverColor: rgb(151, 187, 21);
+    --scrambleWordsHoverColor: rgb(26, 199, 127);
+    --wordsTypingHoverColor: rgb(26, 133, 175);
+    --numberFactsHoverColor: rgba(223, 158, 16);
+    --tableColomnHeaderColor: #ffbb00;
+    --tableRowHeaderColor: #66ff00;
+    --forecastDateColor: orangered;
+}
+
+body {
+    caret-color: transparent;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 12px;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    display: block;
+}
+
+
+/* Navbar section starts here */
+.navBar {
+    width: 96%;
+    border-radius: 0.8rem;
+    height: max-content;
+    padding: 0.4rem 0.6rem;
+    margin: 0.2rem auto;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    color: var(--fontColor);
+
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem 0.2rem;
+    width: max-content;
+}
+
+.imageContainer {
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 50%;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navBar h2 {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    padding-left: 0.8rem;
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.searchBarContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem 0.2rem;
+    width: 40%;
+}
+
+#searchBarInput {
+    width: 94%;
+    border-radius: 16px;
+    border: 2px solid wheat;
+    outline: 0px;
+    padding: 0.4rem 0.4rem;
+    font-size: 0.9rem;
+    caret-color: white;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--fontColor);
+}
+
+.fa-searchengin {
+    position: absolute;
+    font-size: 1.6rem;
+    right: 5%;
+    cursor: pointer;
+}
+
+.fa-searchengin:hover {
+    color: green;
+}
+
+/* Navbar section ends here */
+
+/* Weathercard section starts here */
+.weatherCardContainer {
+    display: flex;
+}
+
+.weatherCardContainerLeft {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.40);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    color: var(--fontColor);
+    padding: 0.4rem 0.2rem;
+    margin: 0.1rem auto;
+    margin-top: 1rem;
+    width: 54%;
+    height: max-content;
+    border-radius: 0.8rem;
+}
+
+.rowsMainContainer {
+    display: block;
+    padding: 0rem 0.4rem;
+}
+
+.regionNameContainer {
+    line-height: 0.8em;
+}
+
+.weatherConditonTextContainer {
+    padding: 0rem 0.2rem;
+    margin-top: 0.1rem;
+    line-height: 0.8em;
+    text-align: right;
+}
+
+.row1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 0.2rem;
+}
+
+.row1 h2 {
+    font-size: 1.26rem;
+}
+
+.row2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0.4rem;
+    margin-top: 0.1rem;
+    height: max-content;
+}
+
+.row2 h2 {
+    font-size: 1.4rem;
+}
+
+.tempLogoMainContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 0.4rem;
+}
+
+.tempLogoMainContainer h1 {
+    margin-left: 0.8rem;
+}
+
+.tempLogoContainer {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+
+.tempLogoContainer h1 {
+    margin-left: 0.8rem;
+}
+
+.tempLogoContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.tabelForecastHourlyWeatherData {
+    display: none;
+    padding: 0rem 0.2rem;
+    margin: 0.1rem 0rem;
+}
+
+.tabelForecastHourlyWeatherData table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.4rem 0rem;
+}
+
+.tabelForecastHourlyWeatherData table thead tr th {
+    font-size: 1rem;
+}
+
+.tabelForecastHourlyWeatherData table thead tr th:first-child {
+    font-size: 1rem;
+}
+
+.tabelForecastHourlyWeatherData table tbody tr th {
+    font-size: 1rem;
+}
+
+.tabelForecastHourlyWeatherData th,
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+.tableRow1 {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: var(--tableColomnHeaderColor);
+}
+
+.forecastDate {
+    color: var(--forecastDateColor);
+}
+
+tbody tr th {
+    color: var(--tableRowHeaderColor);
+}
+
+tbody tr:nth-child(even) {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: var(--fontColor);
+}
+
+tbody tr:nth-child(odd) {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: var(--fontColor);
+}
+
+.row3 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 0.2rem;
+    margin: 0.4rem 0rem;
+}
+
+.row3 h2 {
+    font-size: 1.2rem;
+}
+
+.row3:nth-child(odd) {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 0.8rem;
+}
+
+.row3:nth-child(even) {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 0.8rem;
+}
+
+.weatherCardContainerRight {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 0.6rem 0.2rem;
+    margin: 0.1rem auto;
+    margin-top: 1rem;
+    width: 40%;
+    border-radius: 0.8rem;
+    height: max-content;
+}
+
+.weatherDailyWiseCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 22%;
+    height: 32%;
+    margin: 0.2rem 0.2rem;
+    border-radius: 0.8rem;
+    padding: 0.4rem 0.2rem;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    color: var(--fontColor);
+}
+
+#firstDay,
+#secondDay,
+#thirdDay,
+#fourthDay,
+#fifthDay,
+#sixthDay,
+#seventhDay,
+#eightDay {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.additionalContent {
+    display: none;
+}
+
+.additionalContentInnerContainer {
+    margin-left: 0.4rem;
+}
+
+.weatherDailyWiseCard.expanded .additionalContent {
+    display: block;
+}
+
+.dailyCard {
+    cursor: pointer;
+}
+
+.weatherDailyWiseCard h3 {
+    font-weight: bold;
+    margin: 0;
+    padding-top: 0.1rem;
+    padding-bottom: 0.4rem;
+}
+
+.weatherDailyWiseCard h4 {
+    margin: 0;
+    padding-top: 0.4rem;
+    padding-bottom: 0.1rem;
+}
+
+.fa-arrow-up {
+    font-size: 0.6rem;
+}
+
+.fa-arrow-down {
+    font-size: 0.6rem;
+}
+
+.dailyWiseImageContainer {
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.40);
+    border-radius: 50%;
+}
+
+.dailyWiseImageContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.weatherDailyWiseCard h4 .greyColorTemp {
+    color: rgb(0, 255, 34);
+}
+
+/* Weathercard section ends here */
+
+/* Footer section starts here */
+footer {
+    display: flex;
+    justify-content: space-between;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--fontColor);
+    width: 96%;
+    border-radius: 0.8rem;
+    margin: 0.2rem auto;
+    margin-top: 0.8rem;
+}
+
+.rightsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem 0rem;
+    padding-left: 0.6rem;
+    width: 30%;
+}
+
+.rightsImageContainer {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+}
+
+.rightsImageContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.contactUsMainContainer {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    width: 64%;
+}
+
+.contactUsContainer {
+    text-align: left;
+}
+
+.contactUsContainer h4 {
+    font-size: 1.2rem;
+}
+
+.contactUsList {
+    list-style-type: none;
+    padding: 0;
+    padding-right: 4.8rem;
+}
+
+.LinkedIn a:hover {
+    color: var(--linkedInHoverColor);
+}
+
+.Github a:hover {
+    color: var(--githubHoverColor);
+}
+
+.Mail a:hover {
+    color: var(--mailHoverColor);
+}
+
+.Instagram a:hover {
+    color: var(--instagramHoverColor);
+}
+
+.contactUsList li {
+    padding: 0.2rem 0.2rem;
+}
+
+.contactUsList li a {
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+.contactUsList li a i {
+    padding: 0;
+    padding-right: 0.2rem;
+}
+
+.moreAppsContainer h4 {
+    font-size: 1.2rem;
+}
+
+.moreAppsList {
+    list-style-type: none;
+    padding: 0;
+    padding-right: 4.8rem;
+}
+
+.moreAppsList li {
+    padding: 0.2rem 0.2rem;
+}
+
+.moreAppsList li a {
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+.moreAppsList li:nth-child(1) a:hover {
+    color: var(--runsTrackerHoverColor);
+}
+
+.moreAppsList li:nth-child(2) a:hover {
+    color: var(--scrambleWordsHoverColor);
+}
+
+.moreAppsList li:nth-child(3) a:hover {
+    color: var(--wordsTypingHoverColor);
+}
+
+.moreAppsList li:nth-child(4) a:hover {
+    color: var(--numberFactsHoverColor);
+}
+
+.moreAppsList li a i {
+    padding: 0;
+    padding-right: 0.2rem;
+}
+
+/* Footer section ends here */
+
+/* Media queries section starts here */
+@media(max-width: 1208px) {
+    .weatherDailyWiseCard {
+        width: 28%;
+        height: 32%;
+        margin: 0.2rem 0.2rem;
+        border-radius: 0.8rem;
+        padding: 0.4rem 0.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+    }
+
+    .weatherCardContainerLeft {
+        width: 54%;
+    }
+
+    .weatherCardContainerRight {
+        width: 40%;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 1006px) {
+    .weatherDailyWiseCard {
+        width: 38%;
+        height: 32%;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+    }
+
+    .weatherCardContainerLeft {
+        width: 60%;
+    }
+
+    .weatherCardContainerRight {
+        width: 36%;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 828px) {
+    .weatherCardContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .weatherDailyWiseCard {
+        width: 22%;
+        height: 32%;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+    }
+
+    .weatherCardContainerLeft {
+        width: 86%;
+    }
+
+    .weatherCardContainerRight {
+        width: 86%;
+    }
+
+    .rightsContainer {
+        width: 30%;
+    }
+
+    .row1 h2 {
+        font-size: 1rem;
+    }
+
+    .row2 h2 {
+        font-size: 1.2rem;
+    }
+
+    .row2 h1 {
+        font-size: 1.2rem;
+    }
+
+    .row3 h2 {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 582px) {
+    .weatherCardContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .weatherDailyWiseCard {
+        width: 20%;
+        height: 32%;
+        font-size: 0.7rem;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+    }
+
+    .row1 .regionNameContainer h2 {
+        font-size: 1rem;
+    }
+
+    .regionNameContainer {
+        line-height: 1em;
+    }
+
+    .weatherConditonTextContainer {
+        line-height: 1em;
+        font-size: 0.8rem;
+    }
+
+    #regionName {
+        font-size: 0.8rem;
+    }
+
+    .tabelForecastHourlyWeatherData {
+        overflow-x: scroll;
+    }
+
+    table {
+        font-size: 0.6rem;
+    }
+
+    .tabelForecastHourlyWeatherData table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 0.4rem 0rem;
+    }
+
+    .tabelForecastHourlyWeatherData table thead tr th {
+        font-size: 0.8rem;
+    }
+
+    .tabelForecastHourlyWeatherData table thead tr th:first-child {
+        font-size: 0.8rem;
+    }
+
+    .tabelForecastHourlyWeatherData table tbody tr th {
+        font-size: 0.8rem;
+    }
+
+    .tableRow1 {
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: var(--tableColomnHeaderColor);
+    }
+
+    tbody tr:nth-child(even) {
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: var(--fontColor);
+    }
+
+    tbody tr:nth-child(odd) {
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: var(--fontColor);
+    }
+
+    .tabelForecastHourlyWeatherData th,
+    td {
+        padding: 8px;
+        text-align: center;
+    }
+
+    .rightsContainer {
+        width: 30%;
+    }
+
+    .row1 h2 {
+        font-size: 1rem;
+    }
+
+    .row2 {
+        padding: 0.4rem 0.4rem;
+    }
+
+    .row2 h2 {
+        font-size: 1.2rem;
+    }
+
+    .row2 h1 {
+        font-size: 1.2rem;
+    }
+
+    .row3 h2 {
+        font-size: 1rem;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rightsContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 98%;
+        padding: 0.6rem 0.2rem;
+        font-weight: 700;
+    }
+
+    .rightsImageContainer {
+        width: 3rem;
+        height: 3rem;
+        ;
+        margin-right: 0.8rem;
+    }
+
+    .contactUsMainContainer {
+        display: flex;
+        justify-content: space-around;
+        width: 98%;
+    }
+
+    .contactUsContainer {
+        margin-left: 2rem;
+    }
+
+    .searchBarContainer {
+        width: 46%;
+    }
+
+    #searchBarInput {
+        width: 94%;
+        padding: 0.4rem 0.2rem;
+        font-size: 0.9rem;
+    }
+
+    .fa-searchengin {
+        font-size: 1.4rem;
+        right: 7%;
+    }
+
+}

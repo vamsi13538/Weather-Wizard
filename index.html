@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=128&id=46427&format=png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7e99a9e738.js" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather Wizard</title>
+</head>
+<body>
+    <!-- Background video section starts here -->
+    <video class="video-background" id="backgroundVideo" autoplay loop muted>
+        <source src="https://cdn.pixabay.com/video/2021/10/05/90877-629483574_large.mp4" type="video/mp4" id="videoSource">
+        Your browser does not support the video tag.
+    </video>
+    <!-- Background video section ends here -->
+    <!-- Navbar section starts here -->
+        <nav class="navBar">
+            <div class="logoContainer">
+                <div class="imageContainer">
+                    <img src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                </div>
+                <h2>Weather Wizard</h2>
+            </div>
+            <div class="searchBarContainer">
+                <input type="text" id="searchBarInput" placeholder="Search City name here...">
+                <i id="searchInputIcon" class="fa-brands fa-searchengin"></i>
+            </div>
+        </nav>
+    <!-- Navbar section ends here -->
+
+    <!-- Weathercard section starts here -->
+    <section class="weatherCardContainer">
+        <main class="weatherCardContainerLeft">
+            <div class="rowsMainContainer">
+                <div class="row1">
+                    <div class="regionNameContainer">
+                        <h2><span id="currentCityName">Current</span> Weather</h2>
+                        <p id="regionName">Andhra Pradesh | <span id="countryName">India</span></p>
+                    </div>
+                    <div class="weatherConditonTextContainer">
+                        <h2>Time: <small id="CurrentTime">07:27 AM</small></h2>
+                        <p id="weatherConditonText">Rainfall is high</p>
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="tempLogoMainContainer">
+                        <div class="tempLogoContainer">
+                            <img id="currentTempIcon" src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                        </div>
+                        <h1><span id="currentTemp">33</span><sup> &deg;<small>C</small></sup></h1>
+                    </div>
+                    <h2>Feel's Like: <span id="tempFeelsLike">33</span><sup> &deg;<small>C</small></sup></h2>
+                </div>
+                <div class="row3">
+                    <h2>Wind Speed: <span id="windSpeed">33 Km/h</span></h2>
+                    <h2>Humidity: <span id="humidity">80 %</span></h2>
+                </div>
+                <div class="row3">
+                    <h2>Pressure: <span id="pressure">33 hPa</span></h2>
+                    <h2>Cloud Cover: <span id="cloudCover">80 %</span></h2>
+                </div>
+                <div class="row3">
+                    <h2>Visibility: <span id="visibility">33 Km</span></h2>
+                    <h2>Wind Direction: <span id="windDirection">SSE</span></h2>
+                </div>
+                <!-- <div class="row3">
+                    <h2>Precipitation: <span id="precipitation">33 mm</span></h2>
+                    <h2>Dew Point: <span id="dewPoint">80 &deg;C</span></h2>
+                </div> -->
+                <div class="row3">
+                    <h2>Sunrise: <span id="sunRise">5:30 AM</span></h2>
+                    <h2>Sunset: <span id="sunSet">6:00 PM</span></h2>
+                </div>
+            </div>
+            <div class="tabelForecastHourlyWeatherData">
+                <table>
+                    <thead>
+                      <tr class="tableRow1">
+                        <th class="forecastDate"></th>
+                        <th>3:00 am</th>
+                        <th>6:00 am</th>
+                        <th>9:00 am</th>
+                        <th>12:00 pm</th>
+                        <th>3:00 pm</th>
+                        <th>6:00 pm</th>
+                        <th>9:00 pm</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Temp</th>
+                        <td class="tempat3am">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="tempat6am">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="tempat9am">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="tempat12pm">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="tempat15pm">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="tempat18pm">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="tempat21pm">32 <sup> &deg;<small>C</small></sup></td>
+                      </tr>
+                      <tr>
+                        <th>Feels</th>
+                        <td class="feelsat3am">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="feelsat6am">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="feelsat9am">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="feelsat12pm">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="feelsat15pm">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="feelsat18pm">32 <sup> &deg;<small>C</small></sup></td>
+                        <td class="feelsat21pm">32 <sup> &deg;<small>C</small></sup></td>
+                      </tr>
+                      <tr>
+                        <th>Wind</th>
+                        <td class="windat3am">10 Km/h</td>
+                        <td class="windat6am">10 Km/h</td>
+                        <td class="windat9am">10 Km/h</td>
+                        <td class="windat12pm">10 Km/h</td>
+                        <td class="windat15pm">10 Km/h</td>
+                        <td class="windat18pm">10 Km/h</td>
+                        <td class="windat21pm">10 Km/h</td>
+                      </tr>
+                      <tr>
+                        <th>Direction</th>
+                        <td class="dirat3am">WSW</td>
+                        <td class="dirat6am">WSW</td>
+                        <td class="dirat9am">WSW</td>
+                        <td class="dirat12pm">WSW</td>
+                        <td class="dirat15pm">WSW</td>
+                        <td class="dirat18pm">WSW</td>
+                        <td class="dirat21pm">WSW</td>
+                      </tr>
+                      <tr>
+                        <th>Cloud</th>
+                        <td class="cloudat3am">50%</td>
+                        <td class="cloudat6am">50%</td>
+                        <td class="cloudat9am">50%</td>
+                        <td class="cloudat12pm">50%</td>
+                        <td class="cloudat15pm">50%</td>
+                        <td class="cloudat18pm">50%</td>
+                        <td class="cloudat21pm">50%</td>
+                      </tr>
+                      <tr>
+                        <th>Humidity</th>
+                        <td class="humidityat3am">80%</td>
+                        <td class="humidityat6am">80%</td>
+                        <td class="humidityat9am">80%</td>
+                        <td class="humidityat12pm">80%</td>
+                        <td class="humidityat15pm">80%</td>
+                        <td class="humidityat18pm">80%</td>
+                        <td class="humidityat21pm">80%</td>
+                      </tr>
+                      <tr>
+                        <th>Pressure</th>
+                        <td class="pressureat3am">10 hpa</td>
+                        <td class="pressureat6am">10 hpa</td>
+                        <td class="pressureat9am">10 hpa</td>
+                        <td class="pressureat12pm">10 hpa</td>
+                        <td class="pressureat15pm">10 hpa</td>
+                        <td class="pressureat18pm">10 hpa</td>
+                        <td class="pressureat21pm">10 hpa</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </main>
+        <main class="weatherCardContainerRight">
+            <div class="weatherDailyWiseCard">
+                <h3 id="firstDay">Tomorrow</h3>
+                <div class="dailyWiseImageContainer">
+                    <img id="firstDayTempIcon" src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                </div>
+                <h4><span id="firstDayMaxTemp">33</span><sup>&deg;<small>C</small></sup><sub><i class="fa-solid fa-arrow-up" title="Max Temp.."></i></sub> | <span class="greyColorTemp" id="firstDayMinTemp">29</span><sup>&deg;<small class="greyColorTemp">C</small></sup><sub><i class="fa-solid fa-arrow-down" title="Min Temp.."></i></sub></h4>
+                <!-- <button type="button" class="dailyWiseForecastButton">
+                    Load More
+                </button> -->
+            </div>
+            <div class="weatherDailyWiseCard">
+                <h3 id="secondDay">Tue</h3>
+                <div class="dailyWiseImageContainer">
+                    <img id="secondDayTempIcon" src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                </div>
+                <h4><span id="secondDayMaxTemp">33</span><sup>&deg;<small>C</small></sup><sub><i class="fa-solid fa-arrow-up" title="Max Temp.."></i></sub> | <span class="greyColorTemp" id="secondDayMinTemp">29</span><sup>&deg;<small class="greyColorTemp">C</small></sup><sub><i class="fa-solid fa-arrow-down" title="Min Temp.."></i></sub></h4>
+                <div class="additionalContent">
+                    <p>Inside Content</p>
+                </div>
+            </div>
+            <div class="weatherDailyWiseCard">
+                <h3 id="thirdDay">Wed</h3>
+                <div class="dailyWiseImageContainer">
+                    <img id="thirdDayTempIcon" src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                </div>
+                <h4><span id="thirdDayMaxTemp">33</span><sup>&deg;<small>C</small></sup><sub><i class="fa-solid fa-arrow-up" title="Max Temp.."></i></sub> | <span class="greyColorTemp" id="thirdDayMinTemp">29</span><sup>&deg;<small class="greyColorTemp">C</small></sup><sub><i class="fa-solid fa-arrow-down" title="Max Temp.."></i></sub></h4>
+            </div>
+            <div class="weatherDailyWiseCard">
+                <h3 id="fourthDay">Thu</h3>
+                <div class="dailyWiseImageContainer">
+                    <img id="fourthDayTempIcon" src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                </div>
+                <h4><span id="fourthDayMaxTemp">33</span><sup>&deg;<small>C</small></sup><sub><i class="fa-solid fa-arrow-up" title="Max Temp.."></i></sub> | <span class="greyColorTemp" id="fourthDayMinTemp">29</span><sup>&deg;<small class="greyColorTemp">C</small></sup><sub><i class="fa-solid fa-arrow-down" title="Max Temp.."></i></sub></h4>
+            </div>
+            <div class="weatherDailyWiseCard">
+                <h3 id="fifthDay">Fri</h3>
+                <div class="dailyWiseImageContainer">
+                    <img id="fifthDayTempIcon" src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                </div>
+                <h4><span id="fifthDayMaxTemp">33</span><sup>&deg;<small>C</small></sup><sub><i class="fa-solid fa-arrow-up" title="Max Temp.."></i></sub> | <span class="greyColorTemp" id="fifthDayMinTemp">29</span><sup>&deg;<small class="greyColorTemp">C</small></sup><sub><i class="fa-solid fa-arrow-down" title="Max Temp.."></i></sub></h4>
+            </div>
+            <div class="weatherDailyWiseCard">
+                <h3 id="sixthDay">Sat</h3>
+                <div class="dailyWiseImageContainer">
+                    <img id="sixthDayTempIcon" src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                </div>
+                <h4><span id="sixthDayMaxTemp">33</span><sup>&deg;<small>C</small></sup><sub><i class="fa-solid fa-arrow-up" title="Max Temp.."></i></sub> | <span class="greyColorTemp" id="sixthDayMinTemp">29</span><sup>&deg;<small class="greyColorTemp">C</small></sup><sub><i class="fa-solid fa-arrow-down" title="Max Temp.."></i></sub></h4>
+            </div>
+            <div class="weatherDailyWiseCard">
+                <h3 id="seventhDay">Sun</h3>
+                <div class="dailyWiseImageContainer">
+                    <img id="seventhDayTempIcon" src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                </div>
+                <h4><span id="seventhDayMaxTemp">33</span><sup>&deg;<small>C</small></sup><sub><i class="fa-solid fa-arrow-up" title="Max Temp.."></i></sub> | <span class="greyColorTemp" id="seventhDayMinTemp">29</span><sup>&deg;<small class="greyColorTemp">C</small></sup><sub><i class="fa-solid fa-arrow-down" title="Max Temp.."></i></sub></h4>
+            </div>
+            <div class="weatherDailyWiseCard">
+                <h3 id="eightDay">Mon</h3>
+                <div class="dailyWiseImageContainer">
+                    <img id="eightDayTempIcon" src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                </div>
+                <h4><span id="eightDayMaxTemp">33</span><sup>&deg;<small>C</small></sup><sub><i class="fa-solid fa-arrow-up" title="Max Temp.."></i></sub> | <span class="greyColorTemp" id="eightDayMinTemp">29</span><sup>&deg;<small class="greyColorTemp">C</small></sup><sub><i class="fa-solid fa-arrow-down" title="Max Temp.."></i></sub></h4>
+            </div>
+        </main>
+    </section>
+    <!-- Weathercard section ends here -->
+
+    <!-- Footer section starts here -->
+        <footer>
+            <div class="rightsContainer">
+                <div class="rightsImageContainer">
+                    <img src="https://imgcdn.stablediffusionweb.com/2024/6/9/f4408f68-4e21-4aeb-99d5-f9b3d9d4aaa2.jpg" alt="No_Img">
+                </div>
+                <p>All rights are reserved | Weather Wizard &copy; 2024</p>
+            </div>
+            <div class="contactUsMainContainer">
+                <div class="contactUsContainer">
+                    <h4>Contact Us</h4>
+                    <ul class="contactUsList">
+                        <li class="LinkedIn"><a href="https://www.linkedin.com/in/vamsim13538/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                        <li class="Github"><a href="https://github.com/vamsi13538" target="_blank"><i class="fa-brands fa-github"></i> Github</a></li>
+                        <li class="Mail"><a href="mailto:m.vamsim23@gmail.com" target="_blank" title="m.vamsim23@gmail.com"><i class="fa-regular fa-envelope"></i> Mail</a></li>
+                        <li class="Instagram"><a href="https://www.instagram.com/vamsi_13_5_3_8/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="moreAppsContainer">
+                    <h4>Explore More</h4>
+                    <ul class="moreAppsList">
+                        <li><a href="https://github.com/vamsi13538/Runs-Tracker.git" target="_blank"><i class="fa-solid fa-person-running"></i> Runs Tracker</a></li>
+                        <li><a href="https://github.com/vamsi13538/Scramble-Words.git" target="_blank"><i class="fa-solid fa-braille"></i> Scramble Words Game</a></li>
+                        <li><a href="https://github.com/vamsi13538/Words-Typing-Game.git" target="_blank"><i class="fa-regular fa-keyboard"></i> Words Typing Game</a></li>
+                        <li><a href="https://github.com/vamsi13538/Number_Facts_App.git" target="_blank"><i class="fa-solid fa-arrow-up-9-1"></i> Number Facts</a></li>
+                    </ul>
+                </div>
+            <!-- </div> -->
+        </footer>
+    <!-- Footer section ends here -->
+    
+
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/2.0.1/luxon.min.js"></script>
+
+</body>
+</html>
